@@ -18,8 +18,8 @@ var commentRoutes = require("./routes/comments");
 var campgroundRoutes = require("./routes/campgrounds");
 var indexRoutes = require("./routes/index")
 
-// mongoose.connect("mongodb://localhost:27017/yelpcamp", {useNewUrlParser: true});
-mongoose.connect("mongodb+srv://sbokolia:!Shivang123@cluster0-qz2vz.mongodb.net/test?retryWrites=true&w=majority");
+mongoose.connect(process.env.DATABASEURL);
+// mongoose.connect("mongodb+srv://sbokolia:!Shivang123@cluster0-qz2vz.mongodb.net/test?retryWrites=true&w=majority");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
